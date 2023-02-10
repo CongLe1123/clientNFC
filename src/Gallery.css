@@ -39,6 +39,7 @@ div.model{
     opacity: 0;
     transform: scale(0);
     overflow:hidden;
+    border-radius: 25px;
     z-index:999;
 }
 
