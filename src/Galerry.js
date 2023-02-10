@@ -42,8 +42,6 @@ const Gallery = (inputData) =>{
         }
     }
 
-    console.log(data);
-
     return(
 
         <>
