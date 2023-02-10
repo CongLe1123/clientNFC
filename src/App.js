@@ -9,7 +9,7 @@ function App() {
   const [data, setData] = useState();
 
   const getImgs = async() => {
-    const recieve = await fetch(`http://localhost:5000/get/${set}/${imgs}`);
+    const recieve = await fetch(`https://server-jade-delta.vercel.app/get/${set}/${imgs}`);
     const arrayData = await recieve.text();
     setData(arrayData);
   };
