@@ -52,12 +52,18 @@ const Gallery = (inputData) =>{
                         <div className='pics' key={index} onClick={()=>getImg(index)}>
                             <img src={require(`./storage/Thumbnail/${item}`)} style={{width: '100%'}} alt=''/>
                         </div>
+                        <div className={model[index] ? "model open": "model"}>
+                            <img src={require(`./storage/Main/${item}`)} alt=''/>
+                            <CloseIcon className='closeButton' onClick={()=>setModel(model[model.indexOf(true)] = false)}/>
+                            <ArrowForwardIosIcon className='nextButton'onClick={() => nextImg()}/>
+                            <ArrowBackIosIcon className='backButton'onClick={() => prevImg()}/>
+                        </div>
                     </LazyLoad>
                     )
                 })}
             </div>
 
-            {data.map((item, index)=>{
+            {/* {data.map((item, index)=>{
                 return(
                     <LazyLoad once = {true}>
                         <div className={model[index] ? "model open": "model"}>
@@ -68,7 +74,7 @@ const Gallery = (inputData) =>{
                         </div>
                     </LazyLoad>
                 )
-            })}
+            })} */}
         </>
     )
 
