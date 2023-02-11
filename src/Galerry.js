@@ -45,19 +45,6 @@ const Gallery = (inputData) =>{
     return(
 
         <>
-                {data.map((item, index)=>{
-                    return(
-                        <LazyLoad once = {true}>
-                            <div className={model[index] ? "model open": "model"}>
-                                <img src={require(`./storage/Main/${item}`)} alt=''/>
-                                <CloseIcon className='closeButton' onClick={()=>setModel(model[model.indexOf(true)] = false)}/>
-                                <ArrowForwardIosIcon className='nextButton'onClick={() => nextImg()}/>
-                                <ArrowBackIosIcon className='backButton'onClick={() => prevImg()}/>
-                            </div>
-                        </LazyLoad>
-                    )
-                })}
-            
             <div className="gallery">
                 {data.map((item, index)=>{
                     return(
@@ -69,6 +56,19 @@ const Gallery = (inputData) =>{
                     )
                 })}
             </div>
+
+            {data.map((item, index)=>{
+                return(
+                    <LazyLoad once = {true}>
+                        <div className={model[index] ? "model open": "model"}>
+                            <img src={require(`./storage/Main/${item}`)} alt=''/>
+                            <CloseIcon className='closeButton' onClick={()=>setModel(model[model.indexOf(true)] = false)}/>
+                            <ArrowForwardIosIcon className='nextButton'onClick={() => nextImg()}/>
+                            <ArrowBackIosIcon className='backButton'onClick={() => prevImg()}/>
+                        </div>
+                    </LazyLoad>
+                )
+            })}
         </>
     )
 
